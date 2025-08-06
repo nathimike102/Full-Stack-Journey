@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Functions in JavaScript</title>
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <div class="demo">Demo Div</div>
+    <span class="demo">Demo Span</span><br> <br>
+    <div id="demo-id">Demo Div with ID</div>
+    
+    <!-- Example for textContent vs innerText vs innerHTML -->
+    <h2>Demonstrating textContent vs innerText vs innerHTML</h2>
+    <div id="example">
+        This is <strong>bold text</strong> and 
+        <span style="display: none;">this is hidden</span>
+        <em>italic text</em>
+    </div>
+    
+    <div id="output">
+        <h3>Results:</h3>
+        <p><strong>textContent:</strong> <span id="text-content-result"></span></p>
+        <p><strong>innerText:</strong> <span id="inner-text-result"></span></p>
+        <p><strong>innerHTML:</strong> <span id="inner-html-result"></span></p>
+    </div>
+    <script>
+        console.log(document.getElementsByTagName("p"));
+        const demos = document.getElementsByClassName('demo');
+        const demoId = document.getElementById('demo-id');
+        const demoQuery = document.querySelectorAll('.demo');
+        // alert(demos[0].textContent);
+        demos[0].style.color = 'blue';
+        demos[1].style.color = 'green';
+        demoId.textContent = 'Updated Demo Span';
+
+        // Demonstrating the differences
+        const exampleDiv = document.getElementById('example');
+        
+        // Get the results
+        const textContentResult = exampleDiv.textContent;
+        const innerTextResult = exampleDiv.innerText;
+        const innerHTMLResult = exampleDiv.innerHTML;
+        
+        // Display results
+        document.getElementById('text-content-result').textContent = textContentResult;
+        document.getElementById('inner-text-result').textContent = innerTextResult;
+        document.getElementById('inner-html-result').textContent = innerHTMLResult;
+        
+        // Console output for comparison
+        console.log('=== Comparison Results ===');
+        console.log('textContent:', textContentResult);
+        console.log('innerText:', innerTextResult);
+        console.log('innerHTML:', innerHTMLResult);
+        
+        // Example of setting content
+        setTimeout(() => {
+            const newDiv = document.createElement('div');
+            newDiv.style.marginTop = '20px';
+            
+            // Using innerHTML (renders HTML)
+            newDiv.innerHTML = '<h4>Setting with innerHTML:</h4><p>This will render <strong>HTML tags</strong></p>';
+            document.body.appendChild(newDiv);
+            
+            // Using textContent (treats as plain text)
+            const textDiv = document.createElement('div');
+            textDiv.innerHTML = '<h4>Setting with textContent:</h4>';
+            const textPara = document.createElement('p');
+            textPara.textContent = 'This will show <strong>HTML tags</strong> as text';
+            textDiv.appendChild(textPara);
+            document.body.appendChild(textDiv);
+        }, 2000);
+    </script>
+</body>
+</html>

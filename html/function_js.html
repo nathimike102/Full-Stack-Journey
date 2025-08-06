@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JavaScript</title>
+    <script>
+        function add_two(a, b){
+            return a+b;
+        }
+        var x = [10, 20, 30];
+        x.push(100)
+        x.unshift(200);
+        x.splice(1,0, 300, 400, 500);
+        x.sort((a,b)=>b-a);
+        console.log(x);
+        console.log(typeof(10-'2'+'2'));
+        console.log(11-'2');
+        console.log(x.slice(1, 4));
+        console.log(x.length)
+        x.map((ele, index) =>{
+        console.log(ele +"\t"+ index);   
+        })
+        var y = x.filter(ele => ele >= 100);
+        console.log(y);
+        console.log(x.includes(100));
+        console.log(y.includes(10));
+
+        var s = "TECHNICAL hub";
+        console.log(s.toUpperCase());
+        console.log(s.toLowerCase());
+        console.log(s.length);
+        var y = s.replace("I", "i");
+        console.log(s.indexOf("i"));
+        console.log(s.lastIndexOf("i"));
+
+        s = "T, H, U, B";
+        s = s.replace(",", "");
+        console.log(s);
+        s = s.replaceAll(",", "");
+        console.log(s);
+        var y = s.split(" ");
+        console.log(y);
+
+        var d = {
+            100 : 2,
+            200 : 4,
+            "start" : "technical hub"
+        };
+        d[300] = 6;
+        console.log(d);
+        delete d["start"];
+        console.log(d);
+        console.log(Object.keys(d));
+        console.log(Object.values(d));
+        console.log(Object.entries(d));
+
+        Object.entries(d).map(ele=>{
+            console.log("Key is :\t", ele[0] + "\tValue is :\t", ele[1]);
+        });
+
+        var date = new Date();
+        console.log("Date is :\t", date);
+        console.log("Year is :\t", date.getFullYear());
+        console.log("Mon is :\t", date.getMonth() + 1);
+        console.log("Date is :\t", date.getDate());
+        console.log("Day is :\t", date.getDay());
+        console.log("Hour is :\t", date.getHours());
+        console.log("Min is :\t", date.getMinutes());
+        console.log("Sec is :\t", date.getSeconds());
+    </script>
+
+</head>
+<body>
+    <h1 class="highlight" onclick="alert('Hello!')">Functions in JavaScript</h1>
+</body>
+</html>
