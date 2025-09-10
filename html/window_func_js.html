@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func() {
+            alert("Scroll event triggered!");
+        }
+        function func2() {
+            alert("Page loaded!");
+        }
+        window.onresize = function(){
+            alert("Window resized!");
+        }
+        window.onblur = function(){
+            alert("Window lost focus!");
+        }
+        // window.onfocus = function(){
+        //     alert("Window gained focus!");
+        // }
+    </script>
+</head>
+<body onscroll="func()" onload="func2()">
+    <div style="height: 2000px;">Test</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs in JavaScript</title>
+    <script>
+        var x = window.prompt("Enter your name:");
+        var y = window.prompt("Enter your age:");
+        y = parseInt(y);
+        var z = window.prompt("Enter your percentage:");
+        z = parseFloat(z);
+        alert("Hello " + x + ", your age is " + y + " and your percentage is " + z + "%.");
+        if (y < 18) {
+            alert("You are not eligible to vote. \u2717");
+        } else {
+            alert("You are eligible to vote. \u2713");
+        }
+        console.log("Name: " + x);
+        console.log("Age: " + y);
+        console.log("Percentage: " + z);
+    </script>
+</head>
+<body>
+    <h1>Inputs in JavaScript</h1>
+</body>
+</html>

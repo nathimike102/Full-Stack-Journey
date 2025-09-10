@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mobile-menu.css">
+    <title>Mobile Menu</title>
+</head>
+<body>
+    <div class="my-cursor"></div>
+    <div onclick="OpenMenu()" class="mobile-menu">
+        <span class="menu-icon">&#9776;</span>
+    </div>
+    <div onclick="CloseMenu()" class="mobile-options">
+        <div class="mobile-header" id="mobile-header">
+            <p>Logo</p>
+            <span class="menu-icon">&#9776;</span>
+        </div>
+        <div>Home</div>
+        <div>About</div>
+        <div>Products</div>
+        <div>Services</div>
+        <div>Contact</div>
+    </div>
+
+    <script>
+        function OpenMenu() {
+            document.querySelector('.mobile-options').style.right = '0px';
+        }
+        function CloseMenu() {
+            document.querySelector('.mobile-options').style.right = '-200px';
+        }
+        function OpenChat() {
+            document.querySelector('.chat-options').style.left = '0px';
+        }
+        function CloseChat() {
+            document.querySelector('.chat-options').style.left = '-250px';
+        }
+        const myCursor = document.querySelector('.my-cursor');
+        document.addEventListener('mousemove', (e) => {
+            myCursor.style.left = e.clientX + 'px';
+            myCursor.style.top = e.clientY + 'px';
+        });
+
+    </script>
+</body>
+</html>

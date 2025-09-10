@@ -1,0 +1,78 @@
+body{
+    background-color: black;
+    gap : 10px;
+    display: flex;
+}
+.animations div{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 5s;
+}
+.demo1{
+    background-color: red;
+    animation: sliding1 5s infinite linear;
+}
+
+.demo2{
+    background-color: orange;
+    animation: sliding2 5s infinite linear;
+}
+
+.demo3{
+    background-color: yellow;
+    animation: sliding3 5s infinite linear;
+}
+@keyframes sliding1{
+    50% {
+        transform: translate(50%);
+        background: radial-gradient(circle, red 50%, orange 50%);
+    }
+    100% {
+        transform: translate(100%);
+        background: radial-gradient(circle, orange 50%, yellow 50%);
+    }
+}
+@keyframes sliding2{
+    50%{
+        transform: translate(50%);
+        background: radial-gradient(circle, orange 50%, yellow 50%);
+    }
+    100% {
+        transform: translate(100%);
+        background: radial-gradient(circle, green 50%, blue 50%);
+    }
+}
+@keyframes sliding3{
+    50%{
+        transform: translate(50%);
+        background: radial-gradient(circle, green 50%, blue 50%);
+    }
+    100% {
+        transform: translate(100%);
+        background: radial-gradient(circle, indigo 50%, violet 50%);
+    }
+}
+
+.transitions div{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 2s;
+}
+.demos1{
+    background-color: red;
+}
+.demos1:hover{
+    background-color: orange;
+    transform: translate(100%);
+}
+.demos2{
+    background-color: yellow;
+}
+.demos2:hover{
+    background-color: green;
+    transform: translate(100%);
+}
