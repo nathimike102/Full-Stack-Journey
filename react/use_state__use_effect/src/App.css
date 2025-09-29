@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  background: radial-gradient(grey, black);
+  color: white;
+}
+
+.myHeading {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.myForm {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.myInput {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.myInput:focus {
+  outline: 2px solid #4caf50;
+}
+
+.radio {
+  transform: scale(1.5);
+  cursor: pointer;
+  accent-color: #4caf50;
+  margin-right: 0.25rem;
+}
+
+.buttons {
+  text-align: center;
+}
+.myButton {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px #addce2;
+}
+
+.myButton:active {
+  position: relative;
+  top: 4px;
+  box-shadow: none;
+}
+
+.myButton:hover {
+  opacity: 0.8;
+  box-shadow: 4px 4px #addce2, 8px 8px #330686;
+}
+
+.submit {
+  background-color: #4caf50;
+}
+.reset {
+  background-color: #f44336;
+}
+
+.myTable {
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.myTable th, td {
+  padding-inline: 2rem;
+}
+.myTable th {
+  text-decoration: underline;
+}
