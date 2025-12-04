@@ -6,12 +6,12 @@ Callback version
 -> calling a function that takes a callback (function called through another function)
 */
 const getUserDetails = (userId, callback) => {
-    console.log("Fetchin user details using callback...");
+    console.log("Fetching user details using callback...");
     callback({userId : userId, name : "Nathi"});
 }
 
 const getUserSubjects = (userId, callback) => {
-    console.log("Fetchin user subjects using callback for", userId);
+    console.log("Fetching user subjects using callback for", userId);
     callback(["Maths", "Science", "English"]);
 }
 
@@ -33,7 +33,7 @@ Promise version
 -> has .then() and .catch() methods to handle resolved and rejected cases
 */
 const getUserDetailsPromise = (id) => {
-    console.log("Fetchin user details using Promise...");
+    console.log("Fetching user details using Promise...");
     return new Promise((resolve, reject) => {
         resolve({userId : id, name : "Nathi"});
         reject("Error fetching user details");
@@ -41,7 +41,7 @@ const getUserDetailsPromise = (id) => {
 }
 
 const getUserSubjectsPromise =(id) => {
-    console.log("Fetchin user subjects using Promise for", id);
+    console.log("Fetching user subjects using Promise for", id);
     return new Promise((resolve, reject) => {
         resolve (["Maths", "Science", "English"]);
         reject("Error fetching user subjects");
@@ -70,3 +70,19 @@ Async/Await version
 -> syntactic sugar over Promises (makes asynchronous code look synchronous)
 -> uses async keyword before function and await keyword before Promise
 */
+const getUserDetailsAsync = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({name : "Nathi"})
+        }, 2000);
+    })
+};
+
+const getAll = async() => {
+    console.log("First line printed");
+    const result = await getUserDetailsAsync("h9");
+    console.log(result);
+    console.log("Last line Printed");
+}
+
+getAll();
