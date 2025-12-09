@@ -12,6 +12,10 @@ let users = [
 
 let nextId = 3;
 
+// Difference between send and json
+// res.send() can send various types of responses (string, html, buffer, object, etc.)
+// res.json() specifically sends a JSON response and sets the Content-Type header to application/json
+
 // GET all users
 app.get('/users', (req, res) => {
     console.log("Received GET request for /users");
