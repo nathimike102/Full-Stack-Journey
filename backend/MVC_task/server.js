@@ -31,21 +31,16 @@ Backend/MVC_task/
 
 import express from 'express';
 import productRoutes from './Routes/productRoutes.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware (for frontend integration)
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+app.use(cors());
 
 // Root route
 app.get('/', (req, res) => {
@@ -85,5 +80,4 @@ app.use((err, req, res, next) => {
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    console.log(`API Documentation: http://localhost:${PORT}/`);
 });
