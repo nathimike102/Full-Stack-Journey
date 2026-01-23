@@ -1,0 +1,166 @@
+:root {
+  --bg: #1f1f21;
+  --card: #272729;
+  --muted: #9a9a9a;
+  --accent: #222;
+  --text: #efefef;
+  --primary: #111315;
+  --btn: #111215;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    Segoe UI,
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 48px;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 18px;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.subtitle {
+  margin: 18px 0 8px;
+  font-size: 1.05rem;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin: 18px;
+}
+.file-field input[type="file"] {
+  display: inline-block;
+}
+
+.preview {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.preview img {
+  max-width: 360px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.preview figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.muted {
+  color: var(--muted);
+}
+
+.email {
+  margin-top: 8px;
+  text-align: left;
+}
+.email .row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.email input[type="email"],
+.email input[type="text"] {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+}
+.email textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+}
+
+.btn {
+  background: #111;
+  color: var(--text);
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.btn:hover:not(:disabled) {
+  background: #222;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  .card {
+    padding: 28px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .email .row {
+    flex-direction: column;
+  }
+}
