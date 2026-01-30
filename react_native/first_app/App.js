@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput} from 'react-native';
 import { useState } from 'react';
 
-export default function App() {
+const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const Login = () => {
@@ -27,14 +26,15 @@ export default function App() {
         <TextInput style={styles.input} secureTextEntry={true} onChangeText={text => setPassword(text)} value={password} />
       </View>
       <Text style={styles.button} onPress={Login}>Login</Text>
-      <StatusBar style="auto" />
     </View>
     <View>
-      <Text style={styles.footer}>nathi_mike</Text>
+      <Text style={styles.footer}>© nathi_mike</Text>
     </View>
     </>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
