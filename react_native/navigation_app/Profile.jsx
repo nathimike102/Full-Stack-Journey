@@ -2,16 +2,16 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const Home = () => {
+const Profile = () => {
     const insets = useSafeAreaInsets();
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            <Text style={styles.text}>Home Screen</Text>
+            <Text style={styles.text}>Profile Screen</Text>
         </View>
     );
 };
 
-export default Home;
+export default Profile;
 
 const styles = StyleSheet.create({
     container: {

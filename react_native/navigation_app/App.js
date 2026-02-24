@@ -1,25 +1,28 @@
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Provider as PaperProvider } from "react-native-paper";
-import Home from "./Home.jsx";
-import Contact from "./Contact.jsx";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStaticNavigation } from '@react-navigation/native';
+import BottomNavigationTabs from './BottomTabs.jsx';
+import Profile from './Profile.jsx';
 
-const App = () => {
-  const Stack = createNativeStackNavigator();
+const Stack = createStaticNavigation();
 
+export default function App() {
   return (
-    <PaperProvider>
-      <SafeAreaProvider style={{ backgroundColor: "#ffffff" }}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Contact" component={Contact} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </PaperProvider>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Tabs" component={BottomNavigationTabs} />
+        <Stack.Screen name="Profile" component={Profile} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
+}
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
