@@ -1,6 +1,7 @@
 import React from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Icon } from 'react-native-paper';
 import Home from "./Home.jsx";
 import Settings from "./Settings.jsx";
 
@@ -23,7 +24,6 @@ const BottomNavigationTabs = () => {
                   },
                   tabBarActiveTintColor:"green",
                   tabBarInactiveTintColor:"black",
-                //   headerShown:false,
                 //   headerStyle:{
                 //   }
                 })}
